@@ -1,0 +1,315 @@
+@import url('/css/common.css');
+
+/* ── Main content area ── */
+.main-content {
+    background: #e5e7eb;
+    padding: 2rem 0 3rem;
+    min-height: calc(100vh - 56px);
+}
+
+/* ── Detail card ── */
+.library-details-card {
+    background: #f4f7fc;
+    border: 1px solid #cfd8e8;
+    border-radius: 10px;
+    padding: 1.1rem;
+    box-shadow: 0 2px 6px rgba(18, 38, 62, 0.07);
+}
+
+.library-header h1 {
+    margin: 0;
+    color: #1e3148;
+}
+
+.subtitle {
+    margin-top: 0.3rem;
+    color: #445e78;
+}
+
+/* ── Tabs ── */
+.tabs {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    margin: 0.95rem 0;
+}
+
+.tab-button {
+    border: 1px solid #c5d3e5;
+    background: #edf2fa;
+    color: #2d4a68;
+    border-radius: 999px;
+    padding: 0.36rem 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-button.active {
+    background: #3a9de1;
+    color: #ffffff;
+    border-color: #3a9de1;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ── Details grid ── */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.detail-item,
+.github-section,
+.algorithms-section,
+.overview-content,
+.limitation-content,
+.installation-step,
+.testing-item {
+    background: #f9fbff;
+    border: 1px solid #cfd8e8;
+    border-radius: 10px;
+    padding: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.detail-item p,
+.github-section p,
+.overview-content p,
+.limitation-content p {
+    color: #405470;
+}
+
+/* Make overview and limitation paragraphs justified (even left & right edges) */
+.overview-content p,
+.limitation-content p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2c7dba;
+    word-break: break-all;
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.algorithm-tag {
+    display: inline-block;
+    margin: 0.2rem 0.2rem 0 0;
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    background: #deeeff;
+    color: #2470b0;
+    font-size: 0.8rem;
+}
+
+/* ── Code blocks ── */
+code,
+pre {
+    background: #1a2f47;
+    color: #e8f3ff;
+    border-radius: 8px;
+}
+
+code {
+    padding: 0.1rem 0.3rem;
+}
+
+pre {
+    padding: 0.75rem;
+    overflow-x: auto;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: #2c7dba;
+    font-weight: 700;
+}
+
+/* ── Spinner ── */
+.spinner {
+    width: 38px;
+    height: 38px;
+    border: 4px solid #cfd8e8;
+    border-top-color: #3a9de1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 980px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Installation images ── */
+.installation-image-item {
+    margin-top: 0.75rem;
+}
+
+.installation-image-item a {
+    display: inline-block;
+}
+
+.installation-image {
+    display: block;
+    max-width: 100%;
+    max-height: 340px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid #cfd8e8;
+    cursor: zoom-in;
+}
+
+.installation-image-explanation {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #5a7090;
+}
+
+/* ── Testing images ── */
+.testing-images {
+    margin-top: 1rem;
+}
+
+.testing-images-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.testing-image-item {
+    flex: 1 1 220px;
+    max-width: 100%;
+}
+
+.testing-image-item a {
+    display: inline-block;
+}
+
+.testing-image {
+    display: block;
+    max-width: 100%;
+    max-height: 340px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid #cfd8e8;
+    cursor: zoom-in;
+}
+
+.testing-image-explanation {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #5a7090;
+}
+
+/* ══════════════════════════════════
+   Dark Mode — Details page
+══════════════════════════════════ */
+html.dark .main-content {
+    background: #0f172a;
+}
+
+html.dark .library-details-card {
+    background: #1e293b;
+    border-color: #2d3f55;
+}
+
+html.dark .library-header h1 {
+    color: #e2e8f0;
+}
+
+html.dark .subtitle {
+    color: #94a3b8;
+}
+
+html.dark .tab-button {
+    background: #1e293b;
+    border-color: #2d3f55;
+    color: #94a3b8;
+}
+
+html.dark .tab-button:hover {
+    background: #2d3f55;
+    color: #cbd5e1;
+}
+
+html.dark .tab-button.active {
+    background: #3a9de1;
+    border-color: #3a9de1;
+    color: #fff;
+}
+
+html.dark .detail-item,
+html.dark .github-section,
+html.dark .algorithms-section,
+html.dark .overview-content,
+html.dark .limitation-content,
+html.dark .installation-step,
+html.dark .testing-item {
+    background: #162032;
+    border-color: #2d3f55;
+}
+
+html.dark .detail-item h3,
+html.dark .github-section h3,
+html.dark .algorithms-section h3 {
+    color: #e2e8f0;
+}
+
+html.dark .detail-item p,
+html.dark .github-section p,
+html.dark .overview-content p,
+html.dark .limitation-content p {
+    color: #94a3b8;
+}
+
+html.dark .algorithm-tag {
+    background: rgba(36, 112, 176, 0.25);
+    color: #7dd3fc;
+}
+
+html.dark .installation-image,
+html.dark .testing-image {
+    border-color: #2d3f55;
+}
+
+html.dark .testing-image-explanation {
+    color: #64748b;
+}
+
+html.dark .back-button {
+    color: #5ec2ff;
+}
+
